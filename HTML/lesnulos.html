@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<title>SHIFUMI texte</title>
+</head>
+<body>
+<p>
+Choisir Pierre, Papier, Ciseaux : 
+  <div class="container">
+      <h1>Shifumi réalisé en JavaScript</h1>
+      <p>Vous et le robot allez simultanément un des trois coups possibles en le symbolisant de la main :</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Rock-paper-scissors_%28rock%29.png" width="100" alt="Pierre">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Rock-paper-scissors_%28paper%29.png" width="100" alt="Feuille">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Rock-paper-scissors_%28scissors%29.png" width="100" alt="Ciseaux">
+      <p>Par principe, la pierre bat les ciseaux (en les émoussant), les ciseaux battent la feuille (en la coupant ou déchiquetant), la feuille bat la pierre (en la recouvrant). Ainsi nous gardons la forme traditionelle du shifumi, et on prend pas le puit parce que c'est de LA TRICHE. </br>
+        </p>
+    
+      <button class="btn btn-warning btn-lg">Pierre</button>
+      <button class="btn btn-danger btn-lg">Feuille</button>
+      <button class="btn btn-success btn-lg">Ciseaux</button>
+      <div class="resultat"></div>
+    </div>
+
+
+<div id="prebilan"></div>
+<div id="bilan"></div>
+
+</p>
+    <script type="text/javascript">
+      const buttons = document.querySelectorAll("button");
+      const username = prompt("Veuillez indiquer votre nom d'utilisateur...");
+      var Score=0;
+      var ScoreRobobot=0;
+      console.log(username)
+      for (let i = 0; i < buttons.length; i++){
+        buttons[i].addEventListener("click", function() {
+          var joueur = buttons[i].innerHTML;
+          var robot = buttons[Math.floor(Math.random() * buttons.length)].innerHTML;
+          var resultat;
+          
+
+          // Logique entiere du jeu
+          if (joueur === robot)
+            resultat = "Vous avez fait une égalité !";
+        	
+          else if ((joueur === "Pierre" && robot === "Ciseaux") || (joueur === "Feuille" && robot === "Pierre") || (joueur === "Ciseaux" && robot === "Feuille"))
+            {resultat = "Vous avez gagné ce round!!";
+         	Score = Score + 1;
+            console.log("Score joueur",Score)}
+          else {
+            resultat = "Vous avez perdu ce round!";
+            ScoreRobobot = ScoreRobobot + 1;
+            console.log("Score robot",ScoreRobobot)}
+        
+          if (ScoreRobobot == 3){
+              resultat = "vous avez perdue cette partie"
+          } else if (Score == 3){
+              resultat= "vous avez gagner cette partie"
+          }
+          document.querySelector(".resultat").innerHTML = `
+            ${username} : ${joueur}</br>
+            Le robot a choisi : ${robot}</br>
+            ${resultat}
+          `;
+        })
+    }
+    </script>
+</body>
+</html>

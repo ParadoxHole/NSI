@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>The RPS gamé</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="">
+<style>
+</style>
+<script src=""></script>
+<body>
+
+    <img src="https://www.umop.com/rps101/symbols/10.png" alt="Player"  id="Player" onclick="toggleImage()"width = '150px'>
+    <div class="center">
+        <img onclick="Fight()" src="versus.png">
+    </div>
+    <img class="other" src="question.png" alt="other"  id="NotAI" width = '150px'>
+    <div classe="score">
+        <h1>SCORE</h1>
+    </div>
+    
+<script> 
+    //onmouseenter="bigging(Player)" onmouseleave="smaling(Player)"
+    var L = 3;
+    var uc=1;
+    var ScorePlayer=0;
+    var ScoreIA=0;
+    //image = 1;
+
+    var img1 = "https://www.umop.com/rps101/symbols/10.png";
+    var img2 = "http://www.umop.com/rps101/symbols/18.png";
+    var img3 = "https://www.umop.com/rps101/symbols/61.png";
+
+    function toggleImage() {
+
+        var PlayerImage = document.getElementById('Player');
+       
+        //PlayerImage.src = "https://www.umop.com/rps101/symbols/"+image+".png";
+        //image += 1;
+        if (PlayerImage.src === img1) {
+                PlayerImage.src = img2;
+                uc = 2;
+            } else if (PlayerImage.src === img2) {
+                PlayerImage.src = img3;
+                uc = 3;
+            } else {
+                PlayerImage.src = img1;
+                uc = 1;
+        }
+        var sign = Array(img1)
+    }
+
+    function Fight(){
+        var range = (L - 1) + 1;
+        var randomNumber = Math.floor( Math.random() * range) + 1; 
+        var cc=randomNumber;
+        var be = ((L-1)/2) + uc;
+
+        var AIImage = document.getElementById('NotAI');
+        if (cc == 1){
+            AIImage.src = img1;
+        } else if (cc == 2){
+            AIImage.src = img2;
+        }else{
+            AIImage.src = img3;
+        }
+        //AIImage.src = "https://www.umop.com/rps101/symbols/"+cc+".png";
+
+        if (be>L && uc>cc) {
+            be = cc + (L-((L-1)/2)) - uc
+            if(0<be) {ScoreIA += 1}
+            else {ScorePlayer+= 1} 
+        }else if (uc==cc) {console.log('tie');}  
+        else if (uc<cc)
+            if (be>=cc) {ScorePlayer+= 1} 
+            else {ScoreIA += 1}  
+        else
+            if (cc>be) {ScorePlayer+= 1} 
+            else {ScoreIA += 1}
+        console.log('IA',ScoreIA);
+        console.log('Joueur',ScorePlayer);
+
+        if (ScoreIA == 3){
+            console.log("LoosEURRRRRRRRRRRRR")
+            ScoreIA = 0
+            ScorePlayer= 0
+        } else if(ScorePlayer== 3){
+            console.log("WIN")
+        }
+    }
+
+    /*function bigging(image_name){
+        var imgElement = document.getElementById('Player');
+        imgElement.style.width = '200px';
+    };
+    function smaling(image_name){
+        var imgElement = document.getElementById('Player');
+        imgElement.style.width = '100px';
+    };*/
+
+</script>   
+<style>
+    .other {
+  display: grid;
+  place-items: bottom;
+}
+body{
+    background-color: rgb(20, 20, 20);
+}
+.center {
+  display: grid;
+  place-items: center;  
+}
+.score{
+    padding: 10px; 
+    background:green;
+    height:20px
+}
+h1{
+  font-family:Voleur;
+  font-size: 50px;
+  border: rgb(255, 0, 0);
+  
+  text-align: right;
+  text-align: top;
+}
+@font-face {
+  font-family: "Voleur";
+  src: URL('Voleur.ttf') format('truetype');
+}
+
+</style>     
+</body>
+
+</html>
