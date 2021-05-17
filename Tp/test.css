@@ -1,0 +1,12 @@
+:root {
+    /* :root is a clever way of saying "the outer-most element" */
+    
+    --footer-color: #ff4545; /* the default */
+  }
+  
+h1 {
+ width: 100%;
+ height: 50px;
+ margin-top: 20px;
+ background-color: var(--footer-color)
+}

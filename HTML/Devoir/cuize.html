@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8 " />
+    <title>Le Cuize de larry</title>
+    <link rel="icon" type="image/gif" href="images/logo.png" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="CuiCuize.css">
+</head>
+
+<body>
+    <div id="box">
+
+
+        <div id="text-box">
+            <div id="texte">
+                <p>En voiture les enfants, vous êtes près pour le Cuize</p>
+                <div id="CUIZE">
+                    <div id="questions">
+                        <a id="question">Dans Quelle université Larry est aller </a>
+                        <ul>
+                            <li><button onclick="answer(1, 1)">dans L'université de Caroline du Nord</button></li>
+                            <li><button onclick="answer(1, 2)">dans L'université de Chicagogo</button></li>
+                            <li><button onclick="answer(1, 3)">dans L'unIversité de Caroline de Sud-Ouest</button></li>
+                        </ul>
+
+                        <a id="question">Comment aurait dû s'appeller Google</a>
+                        <ul>
+                            <li><button onclick="answer(2, 1)">"gogole"</button></li>
+                            <li><button onclick="answer(2, 2)">"Larry Page Le moteur de recherche"</button></li>
+                            <li><button onclick="answer(2, 3)">"Googol"</button></li>
+                            <li><button onclick="answer(2, 4)">"ça devait s'appeller Google dès le début"</button></li>
+                        </ul>
+
+                        <a id="question">Que dit Larry:</a>
+                        <ul>
+                            <li><button onclick="answer(3, 1)">Si tu peux faire un truc tout seul fait le</button></li>
+                            <li><button onclick="answer(3, 2)">Plus tu délègue plus ta de chance d'être délègué</button></li>
+                            <li><button onclick="answer(3, 3)">Franchement Stalman c'est un chic type</button></li>
+                        </ul>
+
+                        <a>Score: <a id="score">0/3<a></a>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const reponses = [1, 3, 1]
+    var repondu = [0, 0, 0]
+    var reponses_info = ["Vous vous rappellez pas de la petite animation au début ?", "PATATRA c'est pas ça", "c'est vrai mais, il as pas dit ça"] //les reponses quand on a faux
+    var score = 0
+
+    function answer(question, numero) {
+        question -= 1; // pour dédécaler
+
+        if (repondu[question] == 1) {
+            alert("Vous avez déjà répondu à cette question")
+            return;
+        }
+        if (numero == reponses[question]) {
+            alert("Bonne reponse")
+            repondu[question] = 1; // la question a été répondue
+            score += 1;
+        } else {
+            alert("mauvaise reponse\n" + reponses_info[question])
+            repondu[question] = 1; // la question a été répondue
+        }
+
+        updateScore()
+    }
+
+    function updateScore() {
+        document.getElementById("score").textContent = score + "/" + reponses.length;
+    }
+</script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+		
+	<head>
+		<meta charset = 'utf-8'/>
+		<title>Ma premiere page</title>
+		<meta name= "description" content="Résumé de la page"/>
+		<link rel="stylesheet" href="css/CSS.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<h1>Bonjour/Welcome/bienvenudo!</h1>
+        <h2>C'est parce que j'ai un public internationale</h2>
+		<h3>je me présente je m'appelle henri et j'aimerai bien réussir ma vie</h3>
+		<p>Alors euh dans la vie j'ai des passe-temps : 
+		<ol>
+			<li ><a href="https://www.youtube.com/channel/UCqunbLMrIy6U0yBCkYJdheA/videos" style="color: forestgreen;">késésa sur youtube </a></li> <br>
+			<div id="pot">
+				<a href="https://www.youtube.com/channel/UCqunbLMrIy6U0yBCkYJdheA/videos"><img src="image/késésa.png"alt="Késésa Logo" style="width:327px;height:56px;" class="box"></a><br>
+			</div>
+			<li>Le code c'est sympa </li> <br>
+			<li>Après bon pas grand chose d'autre </li><br>
+            <li>Ho si les pattes, j'aime bien ça mais c'est pas un passe-temp donc ça marche pas trop </li><br>
+			<li>j'aime bien la piscine c'est pas mal </li> <br>
+		</ol>
+		<ul id="style">
+			<li><a href="#" rel="css/CSS.css" class="link" id="dark_mode"style="color: forestgreen">mon premier site</a></li>
+			<li><a href="#" rel="css/css1.css" class="link incredible" id="incred_mode"style="color: red">mon deuxième site</a></li>
+		</ul>
+		<h4>hep hop combien de doigt</h4>
+		<button type="button" onclick="">coucou</button>
+		</p>
+	</body>
+
+	<script>
+		$(document).ready(function() {
+			$("#style li a ").click(function() {
+				$("link").attr("href", $(this).attr('rel'));
+				return false;
+			});
+		});
+	</script>
+
+</html>

@@ -1,0 +1,180 @@
+/**** element styles ****/
+
+body {	
+	font-size: 1em;
+}
+
+a {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+a:hover {
+	background: #755E23;
+}
+
+a:visited {
+	text-decoration: none;
+	color: #ffffff;
+}
+
+h4 { 
+	margin: 10px;
+	font-size: 1.3em;
+	font-family: sans-serif;
+	color: #ffffff;
+	font-weight: normal;
+	text-align: center;
+}
+
+#zone01 {
+    background-color:#ff0000;
+	height: 25%;	
+	width:25%;
+	position: absolute;
+	top:0%;
+    left:0%;
+    
+}
+
+#zone02 {
+    background-color:#00ff00;
+	height: 25%;	
+	width:25%;
+	position: absolute;
+	bottom:25%;
+	left:0%;
+}
+
+
+#zone03 {	
+	background-color:#0000ff;
+	height: 25%;	
+	width:25%;
+	position: absolute;
+	top:0%;
+	right:0%;
+}
+
+#zone04 {
+    background-color:#000000;
+	height: 25%;	
+	width:25%;
+	position: absolute;
+	bottom:25%;
+	right:0%;
+}
+
+#zone05 {
+    background-color:#29C012;
+	height: 25%;	
+	width:25%;
+	position: absolute;
+	top:25%;
+    left:0%;
+    
+}
+
+#zone06 {
+    background-color: #CF23C3;
+	height: 25%;	
+	width:25%;
+	position: absolute;
+	bottom:0%;
+	left:0%;
+}
+
+
+#zone07 {	
+	background-color:#07F3BD;
+	height: 25%;	
+	width:25%;
+	position: absolute;
+	top:25%;
+	right:0%;
+}
+
+#zone08 {
+    background-color:#B2F466;
+	height: 25%;	
+	width:25%;
+	position: absolute;
+	bottom:0%;
+	right:0%;
+}
+
+#zone09 {
+    background-color:#F37A93;
+	height: 25%;	
+	width:25%;
+	position: absolute;
+	top:0%;
+    left:25%;
+    
+}
+
+#zone10 {
+    background-color:#EBAEB1;
+	height: 25%;	
+	width:25%;
+	position: absolute;
+	bottom:25%;
+	left:25%;
+}
+
+#zone11 {	
+	background-color:#CD2BFC;
+	height: 25%;	
+	width:25%;
+	position: absolute;
+	top:0%;
+	right:25%;
+}
+
+#zone12 {
+    background-color:#6DD40E;
+	height: 25%;	
+	width:25%;
+	position: absolute;
+	bottom:25%;
+	right:25%;
+}
+
+#zone13 {
+    background-color:#9FE4EE;
+	height: 25%;	
+	width:25%;
+	position: absolute;
+	top:25%;
+    left:25%;
+    
+}
+
+#zone14 {
+    background-color:#AFD4FF;
+	height: 25%;	
+	width:25%;
+	position: absolute;
+	bottom:0%;
+	left:25%;
+}
+
+#zone15 {	
+	background-color:#FDE989;
+	height: 25%;	
+	width:25%;
+	position: absolute;
+	top:25%;
+	right:25%;
+}
+
+#zone16 {
+    background-color:#C35355;
+	height: 25%;	
+	width:25%;
+	position: absolute;
+	bottom:0%;
+	right:25%;
+}
+
+

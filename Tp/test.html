@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" type="text/css" href="test.css"> 
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+<div id="chooseColor" style="width:100px;height:100px;--footer-color:#FF0">
+</div>
+<button onclick="pickRandomColor()">Click the button to get random color</button>
+<h1>
+    zer tdrtgdesgdqsgqg
+</h1>
+</body>
+
+<script>
+   //The getColorCode() will give the code every time.
+   function getColorCode() {
+      var makeColorCode = '0123456789ABCDEF';
+      var code = '#';
+      for (var count = 0; count < 6; count++) {
+        code =code+ makeColorCode[Math.floor(Math.random() * 16)];
+        console.log(code);
+      }
+      return code;
+   }
+   //Function call on button click.
+   function pickRandomColor() {
+      $("#chooseColor").css("--footer-color", getColorCode());
+   }
+
+</script>
+</html>

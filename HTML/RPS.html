@@ -8,14 +8,15 @@
 </style>
 <script src=""></script>
 <body>
-
-    <img src="https://www.umop.com/rps101/symbols/10.png" alt="Player"  id="Player" onclick="toggleImage()"width = '150px'>
-    <div class="center">
-        <img onclick="Fight()" src="versus.png">
-    </div>
-    <img class="other" src="question.png" alt="other"  id="NotAI" width = '150px'>
-    <div classe="score">
-        <h1>SCORE</h1>
+    <div class="Layout">
+        <div classe="score">
+            <h1>SCORE</h1>
+        </div>
+        <img src="https://www.umop.com/rps101/symbols/10.png" alt="Player"  id="Player" onclick="toggleImage()"width = '150px'>
+        <div class="center">
+            <img onclick="Fight()" src="versus.png">
+        </div>
+        <img class="other" src="question.png" alt="other"  id="NotAI" width = '150px'>
     </div>
     
 <script> 
@@ -80,7 +81,7 @@
         console.log('Joueur',ScorePlayer);
 
         if (ScoreIA == 3){
-            console.log("LoosEURRRRRRRRRRRRR")
+            console.log("LOOSE")
             ScoreIA = 0
             ScorePlayer= 0
         } else if(ScorePlayer== 3){
@@ -100,13 +101,14 @@
 </script>   
 <style>
     .other {
-  display: grid;
+  position: relative;
   place-items: bottom;
 }
 body{
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(51, 50, 50);
 }
 .center {
+  position: relative;
   display: grid;
   place-items: center;  
 }
@@ -115,19 +117,24 @@ body{
     background:green;
     height:20px
 }
-h1{
+h1{ 
+  position: absolute;
   font-family:Voleur;
   font-size: 50px;
+  color: rgb(255, 255, 255);
   border: rgb(255, 0, 0);
-  
+  position: relative;
   text-align: right;
   text-align: top;
 }
 @font-face {
   font-family: "Voleur";
-  src: URL('Voleur.ttf') format('truetype');
+  src: URL('VoleurHollow.ttf') format('truetype');
 }
-
+.layout{
+    position: absolute;
+    display: flex;
+}
 </style>     
 </body>
 

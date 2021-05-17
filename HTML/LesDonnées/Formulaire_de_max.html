@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Formulaire HTML</title> 
+</head>
+
+<body>
+<style>
+body{
+	text-align: center;
+	border: solid 5px black;
+	padding: 5px;
+	margin:25px 600px 0px 600px;	
+	border-radius: 10px;
+}
+
+</style>
+	
+    <h1>Formulaire de rappel</h1>
+    
+<form method="post" name="mon_formulaire" id="id_form">
+	
+	<input type="text" name="champ_prenom" id="textbox" placeholder="Prenom" size="20"/>
+	<br/>
+  
+	<input type="text" name="champ_nom" id="id_nom" placeholder="Nom" size="20"/>
+	<br/>
+   <p>What is it thats is your classroom</p>
+  <select name="choice2" size="1" id="id_NSI">
+    <option>NSI1
+    <option>NSI2
+    <option>NSI3
+    <option>NSI4
+  </select>
+  
+   <p>what do ya like that you use to be a developer to code</p>
+  <input type="checkbox" name="choice2" id="id_Python" value="1" />Python<br/>
+  <input type="checkbox" name="choice2" id="id_Javascript" value="2" />Javascript<br/> 
+  <input type="checkbox" name="choice2" id="id_HTML" value="3" />HTML<br/>
+  <input type="checkbox" name="choice2" id="id_php" value="4" />php<br/>
+  <input type="checkbox" name="choice2" id="id_mysql" value="4" />mysql(pas ouf)<br/>
+
+  <textarea type="textbox" name="champ_pj" id="id_Python" placeholder="présenter votre project dans le monde numérique svp" rows=4 cols=40></textarea>
+
+</form>
+
+<button id="create">Valider (on ne vole pas vos infos)</button> 
+<a download="info.txt" id="downloadlink" style="display: none">Télécharger vos info</a>
+
+</body>
+<script>
+	
+	(function () {
+var textFile = null,
+  makeTextFile = function (text) {
+    var data = new Blob([text], {type: 'text/plain'});
+
+    // If we are replacing a previously generated file we need to
+    // manually revoke the object URL to avoid memory leaks.
+    if (textFile !== null) {
+      window.URL.revokeObjectURL(textFile);
+    }
+
+    textFile = window.URL.createObjectURL(data);
+
+    return textFile;
+  };
+
+  var create = document.getElementById('create'),
+    textbox = document.getElementById('textbox');
+
+  create.addEventListener('click', function () {
+    var link = document.getElementById('downloadlink');
+    link.href = makeTextFile(textbox.value + " " + id_nom.value + " " + id_numero.value + " " + id_NSI.value);
+    link.style.display = 'block';
+  }, false);
+})();
+
+</script>
+</html>
+

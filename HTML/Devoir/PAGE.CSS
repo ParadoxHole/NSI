@@ -1,0 +1,77 @@
+#pot {
+    position: absolute;
+    animation: 10s run linear infinite, 3s walk linear infinite;
+    width: 10%;
+}
+@keyframes run {
+    0% {left: 0;
+        opacity: 1;
+        bottom: 15%;
+    }
+    40%{
+        bottom: 15%;
+    }
+    45% {left: 40%;
+        opacity: 1;
+        bottom: 5%;
+    }
+    46%{opacity: 0;
+    }
+    100%{opacity: 0;}
+}
+#pi {    
+    bottom: 15%;
+    position: absolute;
+    animation: 10s runed linear infinite, 0.5s walk linear infinite;
+    width: 10%;
+}
+@keyframes runed {
+    0% {left: 40%;
+        opacity: 0;
+    }
+    49%{ opacity: 0;
+    }
+    50% {opacity: 1;
+        left: 40%;
+    }
+    100%{opacity: 1;
+        left: 80%;
+    }
+}
+
+@keyframes walk {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-15deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(15deg);
+    }
+}
+html { 
+    background: url("image/University of North Carolina.jpeg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h1{
+    text-align: center;
+    vertical-align: center;
+    bottom: 50%;
+    color: black;
+    
+}
+h2{
+    position: absolute;
+    bottom: 0%;
+    color: ghostwhite;
+}
+
+
